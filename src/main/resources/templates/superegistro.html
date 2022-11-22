@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Registro</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top">
+            <a class="navbar-brand" href="#">
+                CobraKai
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            </div>
+        </nav>
+        <div class="conteiner">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 conteiner-justify-content-center">
+                    <h1 class="text-center">Registro</h1>
+                    <div class="sticky-center">
+                        <form class="mx-auto" style="width: 300px;" th:action="@{/cobra/guardar}" th:object="${estudiante}" method="post">
+                            <div class="form-group">
+                                <div class="form-group col-md-6">
+                                    <label>Nombre: </label>
+                                    <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Adrian" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Apellido: </label>
+                                        <input type="text" name="Apellido" th:field="*{apellido}" class="form-control" placeholder="Lozano" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Edad:</label>
+                                    <input type="number"  name="edad" th:field="*{edad}"  class="form-control"  placeholder="20">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Correo</label>
+                                    <input type="email" name="correo" th:field="*{correo}" class="form-control"  placeholder="example: alozanol@ucentra.edu.co">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" name="contrasena" th:field="*{contrasena}" class="form-control" placeholder="Password">
+                                </div>
+
+                                <br>
+
+                                <button class="btn btn-dark" type="submit" >Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
